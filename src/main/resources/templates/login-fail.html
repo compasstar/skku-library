@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/sign-up.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
 </head>
 <body>
     <div class="welcome-header">
@@ -20,42 +20,31 @@
         <img class="logo" src="/img/logo.png">
       </div>
 
-      <form th:action="@{/signUp}" method="post">
+      <form th:action="@{/}" method="post">
           <div class="login-content">
             <div class="title">
-              <h1>Sign Up</h1>
+              <h1>Login</h1>
             </div>
 
             <div class="content">
               <div class="input">
                 <p>Id</p>
-                <input th:field="${signUp.id}" type="text" placeholder="id">
+                <input th:field="${login.id}" type="text" placeholder="id">
               </div>
 
               <div class="input">
                 <p>Password</p>
-                <input th:field="${signUp.password}" type="password" placeholder="password">
+                <input th:field="${login.password}" type="password" placeholder="password">
               </div>
 
               <div class="input">
-                <p>Confirm Password</p>
-                <input th:field="${signUp.confirmPassword}" type="password" placeholder="password">
-              </div>
-
-              <div class="input">
-                <p>Name</p>
-                <input th:field="${signUp.name}" type="text" placeholder="name">
-              </div>
-
-              <div class="input">
-                <p>Type</p>
-                <input th:field="${signUp.type}" type="radio" name="type" value="NORMAL"> Normal
-                <input th:field="${signUp.type}" type="radio" name="type" value="ADMINISTRATOR"> Admin
+                <p class="error-message">You entered an Id or Password incorrectly</p>
               </div>
             </div>
 
             <div class="send">
-              <button type="submit">Complete</button>
+                <button type="button" th:onclick="|location.href='@{/signUp}'|">Sign Up</button>
+                <button type="submit">Login</button>
             </div>
           </div>
       </form>

@@ -13,11 +13,11 @@
 <body>
     <header>
         <a href="#" class="header-img">
-            <img class="logo" src="/img/logo.png">
+            <img class="logo" src="/img/logo.png" th:onclick="|location.href='@{/administrator/main}'|">
         </a>
         <div class="header-menu">
-            <a href="#" class="menu">Users</a>
-            <a href="#" class="menu">Books</a>
+            <a href="/administrator/users" class="menu">Users</a>
+            <a href="/administrator/books" class="menu">Books</a>
         </div>
     </header>
     <main>
@@ -38,9 +38,14 @@
         </div>
     </main>
     <footer>
-        <span>SKKU.LIBRARY</span>
-        <span>Developer: Jaehong Lee</span>
-        <span>Email: navihong98@gmail.com</span>
+        <div class="footer-information">
+            <span>SKKU.LIBRARY</span>
+            <span>Developer: Jaehong Lee</span>
+            <span>Email: navihong98@gmail.com</span>
+        </div>
+        <div class="footer-logout">
+            <button class="logout-button" th:onclick="|location.href='@{/}'|">Logout</button>
+        </div>
     </footer>
 </body>
 </html>

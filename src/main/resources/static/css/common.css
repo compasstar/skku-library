@@ -53,7 +53,25 @@ footer {
     background-color: lightgray;
     margin-top: 20px;
     display: flex;
+    justify-content: space-between;
+}
+
+.footer-information {
+    display: flex;
     flex-direction: column;
+}
+
+.footer-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-button {
+    height: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 10px;
 }
 
 input {

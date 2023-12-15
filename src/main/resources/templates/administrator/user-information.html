@@ -11,56 +11,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!--
-    유저 자세한 정보
-    빌린 책 목록
-    도서 이름, 반납 일자, 연체료
-    강퇴하기 버튼
-  -->
     <header>
       <a href="#" class="header-img">
-        <img class="logo" src="/img/logo.png">
+        <img class="logo" src="/img/logo.png" th:onclick="|location.href='@{/administrator/main}'|">
       </a>
       <div class="header-menu">
-        <a href="#" class="menu">Users</a>
-        <a href="#" class="menu">Books</a>
+        <a href="/administrator/users" class="menu">Users</a>
+        <a href="/administrator/books" class="menu">Books</a>
       </div>
     </header>
     <main>
       <div class="information-container">
         <h2 class="user-information-header">User Information</h2>
-        <div class="information">Name: Tom</div>
-        <div class="information">Id: tom_id</div>
-        <div class="information">Password: tom_password</div>
-        <div class="information">Type: normal</div>
+        <div class="information" th:text="|Name: ${user.name}|">Name: Tom</div>
+        <div class="information" th:text="|Id: ${user.loginId}|">Id: tom_id</div>
+        <div class="information" th:text="|Password: ${user.password}|">Password: tom_password</div>
+        <div class="information" th:text="|Type: ${user.type}|">Type: normal</div>
       </div>
 
       <div class="user-books">
         <h2>List of borrowed books</h2>
         <ul>
-          <li>
-            <span class="book-title">Frankenstein</span>
-            <span class="book-available">Due 7</span>
-          </li>
-          <li>
-            <span class="book-title">Project Hail Mary</span>
-            <span class="book-available">Overdue 1 (Late fee: 1$)</span>
-          </li>
-          <li>
-            <span class="book-title">Children of the Rune: Winterer</span>
-            <span class="book-available">Due 1</span>
+          <li th:each="book:${books}">
+            <span class="book-title" th:text="${book.title}">Frankenstein</span>
+            <span class="book-available" th:text="|Due ${7 - book.due}|">Due 7</span>
           </li>
         </ul>
       </div>
 
       <div class="book-button">
-        <button>Resign</button>
+        <button class="resign-button">Resign</button>
       </div>
     </main>
     <footer>
-        <span>SKKU.LIBRARY</span>
-        <span>Developer: Jaehong Lee</span>
-        <span>Email: navihong98@gmail.com</span>
+        <div class="footer-information">
+            <span>SKKU.LIBRARY</span>
+            <span>Developer: Jaehong Lee</span>
+            <span>Email: navihong98@gmail.com</span>
+        </div>
+        <div class="footer-logout">
+            <button class="logout-button" th:onclick="|location.href='@{/}'|">Logout</button>
+        </div>
     </footer>
 </body>
 </html>

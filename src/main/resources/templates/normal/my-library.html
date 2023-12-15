@@ -11,81 +11,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- <h1>My Library</h1>
-
-  <div>내가 빌린 도서 목록을 보여준다</div>
-  <div>반납까지 ~일 남음. [반납하기] [연장하기]</div>
-  <div>연체된 도서: 붉은색 표시 [반납하기] [연체료:얼마] 반납하기 누르면 도서관에 오셔서 결제해주세요!</div>
-  <div>탈퇴하기 버튼</div> -->
-
   <header>
     <a href="#" class="header-img">
-        <img class="logo" src="/img/logo.png">
+        <img class="logo" src="/img/logo.png" th:onclick="|location.href='@{/normal/main}'|">
     </a>
     <div class="header-menu">
-        <a href="#" class="menu">Borrow</a>
-        <a href="#" class="menu">MyLibrary</a>
+        <a href="/normal/borrow" class="menu">Borrow</a>
+        <a href="/normal/myLibrary" class="menu">MyLibrary</a>
     </div>
   </header>
 
   <main>
     <div class="user-information">
-      <h1>Welcome, Andrew!</h1>
-      <h2>You have 3 books left that you can borrow</h2>
+      <h1 th:text="|Welcome, ${name}|">Welcome, Andrew!</h1>
+      <h2 th:text="|You have ${7 - #lists.size(books)} books left that you can borrow|">You have 3 books left that you can borrow</h2>
 
     </div>
     <ul class="book-container">
-      <li class="each-book-container">
+      <li class="each-book-container" th:each="book:${books}">
         <a href="#" class="book">
-          <img class="book-image" src="/img/frankenstein.jpg">
+          <img class="book-image" src="/img/frankenstein.jpg" th:src="|/img/${book.image}|">
           <div class="book-information">
-            <div class="book-title">Frankenstein</div>
-            <div>Shelley Mary, PajuSalim, 2003</div>
-            <div class="book-available">Due 7</div>
+            <div class="book-title" th:text="${book.title}">Frankenstein</div>
+            <div th:text="|${book.author}, ${book.publisher}, ${book.year}|">Shelley Mary, PajuSalim, 2003</div>
+            <div class="book-available" th:text="|Due ${7 - book.due}|">Due 7</div>
           </div>
         </a>
         <div class="book-return">
           <button class="book-button">Renew</button>
-          <button class="book-button">Return</button>
-        </div>
-      </li>
-      <li class="each-book-container">
-        <a href="#" class="book">
-          <img class="book-image" src="/img/project_hailmary.jpg">
-          <div class="book-information">
-            <div class="book-title">Project Hail Mary</div>
-            <div>Andy Weir, RH Korea, 2021</div>
-            <div class="book-available">Due 1</div>
-          </div>
-        </a>
-        <div class="book-return">
-          <button class="book-button">Renew</button>
-          <button class="book-button">Return</button>
-        </div>
-      </li>
-      <li class="each-book-container">
-        <a href="#" class="book">
-          <img class="book-image" src="/img/winterer.jpg">
-          <div class="book-information">
-            <div class="book-title">Childeren of the Rune: Winterer</div>
-            <div>Minhui Jeon, Jeu Media, 2011</div> 
-            <div class="book-available">Overdue 1 (Late fee: 1$)</div>
-          </div>
-        </a>
-        <div class="book-return">
-          <button class="book-button">Return</button>
-        </div>
-      </li>
-      <li class="each-book-container">
-        <a href="#" class="book">
-          <img class="book-image" src="/img/dopaminenation.jpg">
-          <div class="book-information">
-            <div class="book-title">Dopamine Nation</div>
-            <div>Anna, Flow Publish, 2022</div>
-            <div class="book-available">Overdue 3 (Late fee: 2$)</div>
-          </div>     
-        </a>
-        <div class="book-return">
           <button class="book-button">Return</button>
         </div>
       </li>
@@ -96,12 +49,15 @@
     </div>
   </main>
 
-
-
   <footer>
-    <span>SKKU.LIBRARY</span>
-    <span>Developer: Jaehong Lee</span>
-    <span>Email: navihong98@gmail.com</span>
+    <div class="footer-information">
+      <span>SKKU.LIBRARY</span>
+      <span>Developer: Jaehong Lee</span>
+      <span>Email: navihong98@gmail.com</span>
+    </div>
+    <div class="footer-logout">
+      <button class="logout-button" th:onclick="|location.href='@{/}'|">Logout</button>
+    </div>
   </footer>
 
 </body>

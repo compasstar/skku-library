@@ -59,6 +59,10 @@ input {
     font-size: 20px;
 }
 
+.error-message {
+    color: red;
+}
+
 button {
     border-radius: 8px;
     background-color: forestgreen;

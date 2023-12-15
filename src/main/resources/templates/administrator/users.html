@@ -11,18 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!--
-  <h1>유저 리스트</h1>
-  <div>유저 정보: 이름, 아이디, 패스워드, 타입(노말/관리자)</div>
-  -->
-
   <header>
     <a href="#" class="header-img">
-        <img class="logo" src="/img/logo.png">
+        <img class="logo" src="/img/logo.png" th:onclick="|location.href='@{/administrator/main}'|">
     </a>
     <div class="header-menu">
-        <a href="#" class="menu">Users</a>
-        <a href="#" class="menu">Books</a>
+        <a href="/administrator/users" class="menu">Users</a>
+        <a href="/administrator/books" class="menu">Books</a>
     </div>
   </header>
 
@@ -38,39 +33,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Tom</td>
-          <td>tom_id</td>
-          <td>tom_password</td>
-          <td>normal</td>
-        </tr>
-        <tr>
-          <td>vina</td>
-          <td>vina_id</td>
-          <td>vina_password</td>
-          <td>administrator</td>
-        </tr>
-        <tr>
-          <td>gumi</td>
-          <td>gumi_id</td>
-          <td>gumi_password</td>
-          <td>normal</td>
-        </tr>
-        <tr>
-          <td>meme</td>
-          <td>meme_id</td>
-          <td>meme_password</td>
-          <td>normal</td>
+        <tr th:each="user:${users}" th:onclick="|location.href='@{/administrator/users/userInformation/{id}(id=${user.id})}'|">
+          <td th:text="${user.name}">Tom</td>
+          <td th:text="${user.loginId}">tom_id</td>
+          <td th:text="${user.password}">tom_password</td>
+          <td th:text="${user.type}">normal</td>
         </tr>
       </tbody>
     </table>
   </main>
-
-
   <footer>
-    <span>SKKU.LIBRARY</span>
-    <span>Developer: Jaehong Lee</span>
-    <span>Email: navihong98@gmail.com</span>
+    <div class="footer-information">
+      <span>SKKU.LIBRARY</span>
+      <span>Developer: Jaehong Lee</span>
+      <span>Email: navihong98@gmail.com</span>
+    </div>
+    <div class="footer-logout">
+      <button class="logout-button" th:onclick="|location.href='@{/}'|">Logout</button>
+    </div>
   </footer>
 </body>
 

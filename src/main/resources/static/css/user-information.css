@@ -4,7 +4,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 170px;
+    margin-bottom: 260px;
 }
 
 h2 {
@@ -54,7 +54,7 @@ li:hover {
     margin-top: 50px;
 }
 
-button {
+.resign-button {
     background-color: white;
     color: red;
     border-color: red;
@@ -69,7 +69,7 @@ button {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-button:hover {
+.resign-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
 }

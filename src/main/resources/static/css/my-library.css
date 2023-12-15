@@ -18,6 +18,7 @@ li {
 
 main {
     margin-top: 150px;
+    margin-bottom: 420px;
 
     display: flex;
     flex-direction: column;

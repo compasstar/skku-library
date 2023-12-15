@@ -16,8 +16,8 @@
         <img class="logo" src="/img/logo.png" th:onclick="|location.href='@{/normal/main}'|">
     </a>
     <div class="header-menu">
-        <a href="#" class="menu">Borrow</a>
-        <a href="#" class="menu">MyLibrary</a>
+        <a href="/normal/borrow" class="menu">Borrow</a>
+        <a href="/normal/myLibrary" class="menu">MyLibrary</a>
     </div>
   </header>
 
@@ -48,9 +48,14 @@
   </main>
 
   <footer>
-    <span>SKKU.LIBRARY</span>
-    <span>Developer: Jaehong Lee</span>
-    <span>Email: navihong98@gmail.com</span>
+    <div class="footer-information">
+      <span>SKKU.LIBRARY</span>
+      <span>Developer: Jaehong Lee</span>
+      <span>Email: navihong98@gmail.com</span>
+    </div>
+    <div class="footer-logout">
+      <button class="logout-button" th:onclick="|location.href='@{/}'|">Logout</button>
+    </div>
   </footer>
 </body>
 </html>

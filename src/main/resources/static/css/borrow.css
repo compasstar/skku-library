@@ -41,6 +41,10 @@ main {
     justify-content: space-between;
 }
 
+.book-container {
+    display: flex;
+    flex-direction: column;
+}
 
 .book {
     width: 500px;
@@ -95,3 +99,6 @@ main {
     text-decoration: underline;
 }
 
+.submit-button {
+
+}
