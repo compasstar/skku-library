@@ -1,0 +1,37 @@
+main {
+    margin-top: 160px;
+    text-align: center;
+    margin-bottom: 124px;
+
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.each-menu {
+    display: flex;
+    flex-direction: column;
+
+    border-style: solid;
+    border-color: green;
+
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.each-menu:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
+}
+
+.book-image {
+    width: 400px;
+    height: auto;
+}
+
+.menu-title {
+    font-size: 36px;
+}

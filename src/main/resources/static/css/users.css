@@ -1,0 +1,38 @@
+li {
+    margin-bottom: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+main {
+    margin-top: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    margin-top: 30px;
+    margin-bottom: 500px;
+    width: 80%;
+    font-size: 18px;
+
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 1px solid forestgreen;
+}
+
+tr:hover {
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+
+

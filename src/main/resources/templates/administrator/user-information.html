@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SKKU.LIBRARY</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/user-information.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!--
+    유저 자세한 정보
+    빌린 책 목록
+    도서 이름, 반납 일자, 연체료
+    강퇴하기 버튼
+  -->
+    <header>
+      <a href="#" class="header-img">
+        <img class="logo" src="/img/logo.png">
+      </a>
+      <div class="header-menu">
+        <a href="#" class="menu">Users</a>
+        <a href="#" class="menu">Books</a>
+      </div>
+    </header>
+    <main>
+      <div class="information-container">
+        <h2 class="user-information-header">User Information</h2>
+        <div class="information">Name: Tom</div>
+        <div class="information">Id: tom_id</div>
+        <div class="information">Password: tom_password</div>
+        <div class="information">Type: normal</div>
+      </div>
+
+      <div class="user-books">
+        <h2>List of borrowed books</h2>
+        <ul>
+          <li>
+            <span class="book-title">Frankenstein</span>
+            <span class="book-available">Due 7</span>
+          </li>
+          <li>
+            <span class="book-title">Project Hail Mary</span>
+            <span class="book-available">Overdue 1 (Late fee: 1$)</span>
+          </li>
+          <li>
+            <span class="book-title">Children of the Rune: Winterer</span>
+            <span class="book-available">Due 1</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="book-button">
+        <button>Resign</button>
+      </div>
+    </main>
+    <footer>
+        <span>SKKU.LIBRARY</span>
+        <span>Developer: Jaehong Lee</span>
+        <span>Email: navihong98@gmail.com</span>
+    </footer>
+</body>
+</html>

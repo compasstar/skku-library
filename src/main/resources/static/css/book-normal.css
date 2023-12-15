@@ -1,0 +1,58 @@
+main {
+    /* background-color: aqua; */
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 130px;
+}
+
+.book-container {
+    display: flex;
+    gap: 40px;
+}
+
+.book-image {
+    width: 280px;
+    height: auto;
+}
+
+.book-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-title {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.book-available {
+    color: orange;
+    /* color: red; */
+}
+
+.book-button {
+    margin-top: 50px;
+}
+
+button {
+    background-color: white;
+    color: chocolate;
+    border-color: chocolate;
+    border-style: solid;
+    width: 140px;
+    height: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 20px;
+
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
