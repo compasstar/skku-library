@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKKU.LIBRARY</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-  <h1>로그인 및 회원가입 페이지</h1>
 
 
+    <div class="welcome-header">
+      <h1>Welcome To SKKU.LIBRARY!</h1>
+    </div>
+
+    <main>
+      <div class="welcome-content">
+        <img class="logo" src="/img/logo.png">
+      </div>
+
+
+      <div class="login-content">
+        <div class="title">
+          <h1>Login</h1>
+        </div>
+
+        <div class="content">
+          <div class="input">
+            <p>Id</p>
+            <input type="text" placeholder="id">
+          </div>
+
+          <div class="input">
+            <p>Password</p>
+            <input type="password" placeholder="password">
+          </div>
+        </div>
+
+        <div class="send">
+          <button>Sign Up</button>
+          <button>Login</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>SKKU.LIBRARY</span>
+      <span>Developer: Jaehong Lee</span>
+      <span>Email: navihong98@gmail.com</span>
+    </footer>
 </body>
 </html>

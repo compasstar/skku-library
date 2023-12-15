@@ -12,7 +12,7 @@ public class indexController {
 
     @GetMapping("/normal/main")
     public String normalMain() {
-        return "normal/main";
+        return "normal/main-normal";
     }
 
     @GetMapping("/normal/borrow")
@@ -22,7 +22,12 @@ public class indexController {
 
     @GetMapping("/normal/myLibrary")
     public String normalMyLibrary() {
-        return "normal/myLibrary";
+        return "normal/my-library";
+    }
+
+    @GetMapping("/normal/book-normal")
+    public String normalBook() {
+        return "normal/book-normal";
     }
 
     @GetMapping("/administrator/main")

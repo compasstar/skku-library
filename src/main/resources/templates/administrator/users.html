@@ -1,11 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>SKKU.LIBRARY</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/users.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!--
   <h1>유저 리스트</h1>
-  <div>유저 정보: 아이디, 패스워드, 타입(노말/관리자), <a href="/administrator/users/userInformation">빌린책정보(링크)</a>, 강퇴하기 버튼</div>
+  <div>유저 정보: 이름, 아이디, 패스워드, 타입(노말/관리자)</div>
+  -->
+
+  <header>
+    <a href="#" class="header-img">
+        <img class="logo" src="/img/logo.png">
+    </a>
+    <div class="header-menu">
+        <a href="#" class="menu">Users</a>
+        <a href="#" class="menu">Books</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Information of Users</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ID</th>
+          <th>Password</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tom</td>
+          <td>tom_id</td>
+          <td>tom_password</td>
+          <td>normal</td>
+        </tr>
+        <tr>
+          <td>vina</td>
+          <td>vina_id</td>
+          <td>vina_password</td>
+          <td>administrator</td>
+        </tr>
+        <tr>
+          <td>gumi</td>
+          <td>gumi_id</td>
+          <td>gumi_password</td>
+          <td>normal</td>
+        </tr>
+        <tr>
+          <td>meme</td>
+          <td>meme_id</td>
+          <td>meme_password</td>
+          <td>normal</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+
+  <footer>
+    <span>SKKU.LIBRARY</span>
+    <span>Developer: Jaehong Lee</span>
+    <span>Email: navihong98@gmail.com</span>
+  </footer>
 </body>
+
 </html>

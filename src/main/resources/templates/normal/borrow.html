@@ -1,14 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>SKKU.LIBRARY</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/borrow.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!--
   <h1>책 리스트를 보여준다</h1>
+  <div> 검색창 존재 <div>
   <div>카테고리 별로 볼 수 있다. [문학, 비문학, 자기개발서, 에세이, 기타]</div>
   <div>책 이름, 작가, 출판사, 년도, 대출가능여부</div>
+  -->
+
+  <header>
+    <a href="#" class="header-img">
+        <img class="logo" src="/img/logo.png">
+    </a>
+    <div class="header-menu">
+        <a href="#" class="menu">Borrow</a>
+        <a href="#" class="menu">MyLibrary</a>
+    </div>
+  </header>
+
+  <div class="search-bar">
+    <input type="text" class="search-input" placeholder="Input name of book or author">
+    <img class="search-icon" src="/img/search-icon.png">
+  </div>
+
+  <main>
+    <ul class="book-container">
+      <li>
+        <a href="#" class="book">
+          <img class="book-image" src="/img/frankenstein.jpg">
+          <div class="book-information">
+            <div class="book-title">Frankenstein</div>
+            <div>Shelley Mary, PajuSalim, 2003</div>
+            <div class="book-available">Available</div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="book">
+          <img class="book-image" src="/img/project_hailmary.jpg">
+          <div class="book-information">
+            <div class="book-title">Project Hail Mary</div>
+            <div>Andy Weir, RH Korea, 2021</div>
+            <div class="book-available">Available</div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="book">
+          <img class="book-image" src="/img/winterer.jpg">
+          <div class="book-information">
+            <div class="book-title">Childeren of the Rune: Winterer</div>
+            <div>Minhui Jeon, Jeu Media, 2011</div> 
+            <div class="book-available">Checked Out</div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="book">
+          <img class="book-image" src="/img/dopaminenation.jpg">
+          <div class="book-information">
+            <div class="book-title">Dopamine Nation</div>
+            <div>Anna, Flow Publish, 2022</div>
+            <div class="book-available">Checked Out</div>
+          </div>     
+        </a>
+      </li>
+    </ul>
+
+    <div class="category">
+      <ul>
+        <li class="category-item">Literature</li>
+        <li class="category-item">Non-Literature</li>
+        <li class="category-item">Self-Improvement</li>
+        <li class="category-item">Essay</li>
+        <li class="category-item">Etc.</li>
+      </ul>
+    </div>
+  </main>
+
+
+  <footer>
+    <span>SKKU.LIBRARY</span>
+    <span>Developer: Jaehong Lee</span>
+    <span>Email: navihong98@gmail.com</span>
+  </footer>
+
 
 </body>
 </html>
