@@ -21,33 +21,35 @@
     </div>
   </header>
   <main>
-    <div class="book-container">
-      <div class="image-container">
-        <img class="book-image" src="/img/example.png">
-      </div>
-      <div class="book-information">
-        <div class="input-label">Title</div>
-        <input type="text">
-        <div class="input-label">Author</div>
-        <input type="text">
-        <div class="input-label">Publisher</div>
-        <input type="text">
-        <div class="input-label">Year</div>
-        <input type="number">
-        <div class="input-label">Genre</div>
-        <div>
-          <input type="radio" name="genre" value="literature"> Literature
-          <input type="radio" name="genre" value="nonLiterature"> Non-Literature
-          <input type="radio" name="genre" value="selfImprovement"> Self-Improvement
-          <input type="radio" name="genre" value="essay"> Essay
-          <input type="radio" name="genre" value="etc"> Etc.
+    <form th:action="@{/administrator/books/addBook}" method="post" enctype="multipart/form-data">
+      <div class="book-container">
+        <div class="image-container">
+          <img class="book-image" src="/img/example.png">
+        </div>
+        <div class="book-information">
+          <div class="input-label">Title</div>
+          <input type="text" th:field="${book.title}">
+          <div class="input-label">Author</div>
+          <input type="text" th:field="${book.author}">
+          <div class="input-label">Publisher</div>
+          <input type="text" th:field="${book.publisher}">
+          <div class="input-label">Year</div>
+          <input type="number" th:field="${book.year}">
+          <div class="input-label">Genre</div>
+          <div>
+            <input type="radio" name="genre" th:field="${book.type}" value="literature"> Literature
+            <input type="radio" name="genre" th:field="${book.type}" value="nonLiterature"> Non-Literature
+            <input type="radio" name="genre" th:field="${book.type}" value="essay"> Self-Improvement
+            <input type="radio" name="genre" th:field="${book.type}" value="selfImprovement"> Essay
+            <input type="radio" name="genre" th:field="${book.type}" value="etc"> Etc.
+          </div>
         </div>
       </div>
-    </div>
-    <div class="book-button">
-      <button class="add-image-button">Select a Book Image</button>
-      <button class="add-button">Add</button>
-    </div>
+      <div class="book-button">
+        <input type="file" th:field="${book.file}" class="add-image-button"><!--Select a Book Image</input>-->
+        <button class="add-button">Add</button>
+      </div>
+    </form>
   </main>
   <footer>
     <div class="footer-information">

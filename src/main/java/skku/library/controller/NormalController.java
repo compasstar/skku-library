@@ -14,6 +14,7 @@ import skku.library.repository.UserRepository;
 import skku.library.service.NormalService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -23,7 +24,9 @@ public class NormalController {
     private final NormalService normalService;
 
     @GetMapping("/normal/main")
-    public String normalMain() {
+    public String normalMain(Model model) {
+        List<Book> hotBooks = normalService.getHotBooks();
+        model.addAttribute("hotBooks", hotBooks);
         return "normal/main-normal";
     }
 
@@ -75,13 +78,79 @@ public class NormalController {
         return "normal/my-library";
     }
 
+    /**
+     * MyLibrary - Delete Account
+     */
+    @PostMapping("/normal/myLibrary")
+    public String normalMyLibraryDeleteAccount() {
+        normalService.deleteAccount();
+        return "redirect:/";
+    }
 
 
-
-    @GetMapping("/normal/bookNormal")
-    public String normalBook() {
+    /**
+     * Book Information Page
+     */
+    @GetMapping("/normal/bookNormal/{id}")
+    public String normalBook(@PathVariable Long id, Model model) {
+        Book book = normalService.getBookById(id).get();
+        model.addAttribute("book", book);
         return "normal/book-normal";
     }
+
+    /**
+     * In Book Information Page
+     * Borrow Button
+     */
+    @GetMapping("/normal/bookNormal/{id}/borrow")
+    public String normalBookBorrow(@PathVariable Long id, Model model) {
+        String message = null;
+        if (normalService.borrowBook(id)) {
+            message = "Successfully borrowed the book!";
+        } else {
+            message = "Someone else is already borrowing the book";
+        }
+        Book book = normalService.getBookById(id).get();
+        model.addAttribute("book", book);
+        model.addAttribute("message", message);
+        return "normal/book-normal";
+    }
+
+    /**
+     * Renew the Book
+     */
+    @GetMapping("/normal/bookNormal/{id}/renew")
+    public String normalBookRenew(@PathVariable Long id, Model model) {
+        String message = null;
+        if (normalService.renewBook(id)) {
+            message = "Successfully renew the book!";
+        } else {
+            message = "Please borrow the book first";
+        }
+        Book book = normalService.getBookById(id).get();
+        model.addAttribute("book", book);
+        model.addAttribute("message", message);
+        return "normal/book-normal";
+    }
+
+    /**
+     * Return the Book
+     */
+    @GetMapping("/normal/bookNormal/{id}/return")
+    public String normalBookReturn(@PathVariable Long id, Model model) {
+        String message = null;
+        if (normalService.returnBook(id)) {
+            message = "Successfully return the book!";
+        } else {
+            message = "Please borrow the book first";
+        }
+        Book book = normalService.getBookById(id).get();
+        model.addAttribute("book", book);
+        model.addAttribute("message", message);
+        return "normal/book-normal";
+    }
+
+
 
 
 

@@ -23,19 +23,20 @@
     <main>
         <div class="book-container">
             <div>
-                <img class="book-image" src="/img/winterer.jpg">
+                <img class="book-image" src="/img/winterer.jpg" th:src="|/img/${book.image}|">
             </div>
             <div class="book-information">
-                <div class="book-title">Frankenstein</div>
-                <div>Shelley Mary, PajuSalim, 2003</div>
-                <div class="book-available">Available / Due 1 / Overdue 1 (Late fee: 1$)</div>
+                <div class="book-title" th:text="${book.title}">Frankenstein</div>
+                <div th:text="|${book.author}, ${book.publisher}, ${book.year}|">Shelley Mary, PajuSalim, 2003</div>
+                <div class="book-available" th:text="|Due ${7 - book.due}|">Available / Due 1 / Overdue 1 (Late fee: 1$)</div>
             </div>
         </div>
         <div class="book-button">
-            <button>Borrow</button>
-            <button>Renew</button>
-            <button>Return</button>
+            <button class="handling-button" th:onclick="|location.href='@{/normal/bookNormal/{id}/borrow(id=${book.id})}'|">Borrow</button>
+            <button class="handling-button" th:onclick="|location.href='@{/normal/bookNormal/{id}/renew(id=${book.id})}'|">Renew</button>
+            <button class="handling-button" th:onclick="|location.href='@{/normal/bookNormal/{id}/return(id=${book.id})}'|">Return</button>
         </div>
+        <div class="message" id="message" th:text="${message}"></div>
     </main>
     <footer>
         <div class="footer-information">
@@ -47,5 +48,7 @@
             <button class="logout-button" th:onclick="|location.href='@{/}'|">Logout</button>
         </div>
     </footer>
+
+    <script src="/js/normal-message.js"></script>
 </body>
 </html>

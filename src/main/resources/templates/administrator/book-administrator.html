@@ -23,19 +23,21 @@
     <main>
         <div class="book-container">
             <div>
-                <img class="book-image" src="/img/winterer.jpg">
+                <img class="book-image" src="/img/winterer.jpg" th:src="|/img/${book.image}|">
             </div>
             <div class="book-information">
-                <div class="book-title">Frankenstein</div>
-                <div>Shelley Mary, PajuSalim, 2003</div>
-                <div>Literature</div>
-                <div class="book-available">Available / Borrowed by Jaehong: Due 1 / Overdue 1 (Late fee: 1$)</div>
+                <div class="book-title" th:text="${book.title}">Frankenstein</div>
+                <div th:text="|${book.author}, ${book.publisher}, ${book.year}|">Shelley Mary, PajuSalim, 2003</div>
+                <div th:text="${book.type}">Literature</div>
+                <div class="book-available" th:text="${book.userId == null ? 'Available' : 'Checked Out'}">Available / Borrowed by Jaehong: Due 1 / Overdue 1 (Late fee: 1$)</div>
             </div>
         </div>
-        <div class="book-button">
-            <button>Edit</button>
-            <button>Delete</button>
-        </div>
+        <form th:action="@{/administrator/books/deleteBook/{id}(id=${book.id})}" method="post">
+            <div class="book-button">
+                <button type="button" class="handling-button" th:onclick="|location.href='@{/administrator/books/editBook/{id}(id=${book.id})}'|">Edit</button>
+                <button type="submit" class="handling-button">Delete</button>
+            </div>
+        </form>
     </main>
     <footer>
         <div class="footer-information">

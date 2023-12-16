@@ -1,19 +1,23 @@
 package skku.library.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import skku.library.domain.entity.Book;
 import skku.library.domain.entity.User;
+import skku.library.domain.form.BookForm;
 import skku.library.domain.form.SearchForm;
 import skku.library.domain.type.BookType;
 import skku.library.service.AdministratorService;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,6 +57,15 @@ public class AdministratorController {
         return "administrator/user-information";
     }
 
+    /**
+     * Resign User
+     */
+    @PostMapping("/administrator/users/userInformation/{id}/resign")
+    public String administratorUserInformationResign(@PathVariable Long id) {
+        administratorService.resignUser(id);
+        return "redirect:/administrator/users";
+    }
+
 
     /**
      * Books
@@ -89,21 +102,85 @@ public class AdministratorController {
     }
 
 
-    @GetMapping("/administrator/books/bookAdministrator")
-    public String administratorBook() {
+    /**
+     * Book Information
+     */
+    @GetMapping("/administrator/books/bookAdministrator/{id}")
+    public String administratorBook(@PathVariable Long id, Model model) {
+        Book book = administratorService.getBookById(id);
+        model.addAttribute("book", book);
         return "administrator/book-administrator";
     }
 
+    /**
+     * Add Book
+     */
     @GetMapping("/administrator/books/addBook")
-    public String administratorAddBook() {
+    public String administratorAddBook(@ModelAttribute("book")BookForm bookForm) {
+        bookForm.setType("literature");
         return "administrator/add-book";
     }
 
-    @GetMapping("/administrator/books/editBook")
-    public String administratorEditBook() {
+
+    @Value("${file.dir}")
+    private String fileDir;
+
+    @PostMapping("/administrator/books/addBook")
+    public String administratorAddBookPost(@ModelAttribute("book")BookForm bookForm) throws IOException {
+        MultipartFile file = bookForm.getFile();
+        if (!file.isEmpty()) {
+            String fullPath = fileDir + file.getOriginalFilename();
+            log.info("fullPath = " + fullPath);
+            file.transferTo(new File(fullPath));
+        }
+
+        Book book = new Book();
+        book.setTitle(bookForm.getTitle());
+        book.setAuthor(bookForm.getAuthor());
+        book.setPublisher(bookForm.getPublisher());
+        book.setYear(bookForm.getYear());
+        BookType bookType = getBookType(bookForm.getType());
+        book.setType(bookType);
+        book.setImage(file.getOriginalFilename());
+        administratorService.saveBook(book);
+
+        return "redirect:/administrator/books";
+    }
+
+
+    /**
+     * Edit a Book
+     */
+    @GetMapping("/administrator/books/editBook/{id}")
+    public String administratorEditBook(@PathVariable Long id, @ModelAttribute("book")BookForm bookForm, Model model) {
+        Book book = administratorService.getBookById(id);
+        bookForm.setTitle(book.getTitle());
+        bookForm.setAuthor(book.getAuthor());
+        bookForm.setPublisher(book.getPublisher());
+        bookForm.setYear(book.getYear());
+        BookType type = book.getType();
+        bookForm.setType(changeFormType(type));
+
+
+        model.addAttribute("bookImage", book.getImage());
+        model.addAttribute("bookId", id);
         return "administrator/edit-book";
     }
 
+    @PostMapping("/administrator/books/editBook/{id}")
+    public String administratorEditBookPost(@PathVariable Long id, @ModelAttribute("book")BookForm bookForm) throws IOException {
+        administratorService.updateBook(id, bookForm);
+        return "redirect:/administrator/books";
+    }
+
+    /**
+     * Delete the Book
+     */
+    @PostMapping("/administrator/books/deleteBook/{id}")
+    public String administratorDeleteBookPost(@PathVariable Long id) {
+        administratorService.deleteBook(id);
+        return "redirect:/administrator/books";
+    }
 
 
     private static BookType getBookType(String type) {
@@ -120,5 +197,21 @@ public class AdministratorController {
             bookType = BookType.ETC;
         }
         return bookType;
+    }
+
+    private static String changeFormType(BookType type) {
+        String formType = null;
+        if (type.equals(BookType.LITERATURE)) {
+            formType = "literature";
+        } else if (type.equals(BookType.NON_LITERATURE)) {
+            formType = "nonLiterature";
+        } else if (type.equals(BookType.SELF_IMPROVEMENT)) {
+            formType = "selfImprovement";
+        } else if (type.equals(BookType.ESSAY)) {
+            formType = "essay";
+        } else if (type.equals(BookType.ETC)) {
+            formType = "etc";
+        }
+        return formType;
     }
 }

@@ -29,7 +29,7 @@
     </div>
     <ul class="book-container">
       <li class="each-book-container" th:each="book:${books}">
-        <a href="#" class="book">
+        <a th:href="@{/normal/bookNormal/{id}(id=${book.id})}" class="book">
           <img class="book-image" src="/img/frankenstein.jpg" th:src="|/img/${book.image}|">
           <div class="book-information">
             <div class="book-title" th:text="${book.title}">Frankenstein</div>
@@ -37,16 +37,20 @@
             <div class="book-available" th:text="|Due ${7 - book.due}|">Due 7</div>
           </div>
         </a>
+          <!--
         <div class="book-return">
           <button class="book-button">Renew</button>
           <button class="book-button">Return</button>
         </div>
+        -->
       </li>
     </ul>
 
-    <div class="delete-account">
-      <button class="delete-button">DELETE ACCOUNT</button>
-    </div>
+    <form th:action="@{/normal/myLibrary}" method="post">
+        <div class="delete-account">
+          <button type="submit" class="delete-button">DELETE ACCOUNT</button>
+        </div>
+    </form>
   </main>
 
   <footer>

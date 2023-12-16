@@ -24,12 +24,13 @@
   <main>
     <h1>Hot Book!</h1>
     <div class="hot-book-container">
-      <a href="#" class="hot-book">
-        <img class="book" src="/img/frankenstein.jpg">
-        <div class="book-title">Frankenstein</div>
-        <span>Shelley Mary, PajuSalim, 2003</span>
+      <a th:each="hotBook:${hotBooks}" th:href="@{/normal/bookNormal/{id}(id=${hotBook.id})}" class="hot-book">
+        <img class="book" src="/img/frankenstein.jpg" th:src="|/img/${hotBook.image}|">
+        <div class="book-title" th:text="${hotBook.title}">Frankenstein</div>
+        <span th:text="|${hotBook.author}, ${hotBook.publisher}, ${hotBook.year}|">Shelley Mary, PajuSalim, 2003</span>
       </a>
-      <a href="#" class="hot-book">
+      <!--
+        <a href="#" class="hot-book">
         <img class="book" src="/img/project_hailmary.jpg">
         <div class="book-title">Project Hail Mary</div>
         <span>Andy Weir, RH Korea, 2021</span>
@@ -44,6 +45,7 @@
         <div class="book-title">Dopamine Nation</div>
         <span>Anna, Flow Publish, 2022</span>
       </a>
+      -->
     </div>
   </main>
 

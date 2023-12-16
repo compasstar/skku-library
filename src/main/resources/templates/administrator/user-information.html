@@ -32,16 +32,18 @@
       <div class="user-books">
         <h2>List of borrowed books</h2>
         <ul>
-          <li th:each="book:${books}">
+          <li th:each="book:${books}" th:onclick="|location.href='@{/administrator/books/bookAdministrator/{id}(id=${book.id})}'|">
             <span class="book-title" th:text="${book.title}">Frankenstein</span>
             <span class="book-available" th:text="|Due ${7 - book.due}|">Due 7</span>
           </li>
         </ul>
       </div>
 
-      <div class="book-button">
-        <button class="resign-button">Resign</button>
-      </div>
+      <form th:action="@{/administrator/users/userInformation/{id}/resign(id=${user.id})}" method="post">
+          <div class="book-button">
+            <button type="submit" class="resign-button">Resign</button>
+          </div>
+      </form>
     </main>
     <footer>
         <div class="footer-information">
