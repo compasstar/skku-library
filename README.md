@@ -1,7 +1,6 @@
 # SKKU-LIBRARY
 
 
-
 ## :book: 프로젝트 진행
 - 개인프로젝트<br>
 - 개발기간: 2023.11.01 ~ 2023.12.15<br>
@@ -41,14 +40,12 @@ $ cd skku-library
 ```
 
 ### 실행
-- IntelliJ 시작하고 Open 버튼을 눌러주세요<br>
-![run1](./img/run1.png)
+- IntelliJ 를 실행시킨 뒤, Open 하여 skku-library 폴더의 build.gradle 를 선택해주세요<br>
+![1](https://github.com/compasstar/skku-library/assets/55419868/dbd41383-9800-4f63-8bb1-d1dd28daa4c1)
 
-- skku-library 폴더 에서 build.gradle 를 선택 후 OK 버튼을 눌러주세요<br>
-![run2](./img/run2.png)
 
 - `resources/application.properties` 에서 DB 설정 및 파일경로를 개인에 맞게 변경해주세요. (username, password)
-
+![2](https://github.com/compasstar/skku-library/assets/55419868/421caa35-0824-4af2-819d-9690ed9d8f40)
 
 - `LibraryApplication`의 `main()`에서 실행`Run`합니다
 <br>
@@ -56,9 +53,26 @@ $ cd skku-library
 
 
 ## :school: 기술 스택
-<img src="https://img.shields.io/badge/IntelliJ-000000?style=for-the-badge&logo=intellij-idea&logoColor=white"><img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+
+### Environment
+<img src="https://img.shields.io/badge/IntelliJ-000000?style=for-the-badge&logo=intellij-idea&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+
+### Frontend
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
+<img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white">
+
+### Backend
 <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+<img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
+<img src="https://img.shields.io/badge/SpringDataJPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
+
+### DB
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
+
 
 <br>
 
