@@ -55,20 +55,13 @@ $ cd skku-library
 ## :school: 기술 스택
 
 ### Environment
-<img src="https://img.shields.io/badge/IntelliJ-000000?style=for-the-badge&logo=intellij-idea&logoColor=white">
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/IntelliJ-000000?style=for-the-badge&logo=intellij-idea&logoColor=white"><img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
 ### Frontend
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
-<img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white"><img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white">
 
 ### Backend
-<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
-<img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
-<img src="https://img.shields.io/badge/SpringDataJPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
+<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/SpringDataJPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
 
 ### DB
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
@@ -78,70 +71,65 @@ $ cd skku-library
 
 ## :computer: 화면 구성
 
+### 회원가입/로그인
+| 로그인                     | 회원가입                     |
+|---------------------------|---------------------------|
+|![3](https://github.com/compasstar/skku-library/assets/55419868/efaef9cb-ed04-4447-ac0e-215a53a12662)
+ | ![14](https://github.com/compasstar/skku-library/assets/55419868/574c9910-0ad4-4ba5-ad38-631fad5902d3)
+ |
 
-| 방문 날짜                     | 메뉴 주문                     | 이벤트 혜택                    |
+
+### 관리자
+| 사용자 관리                     | 도서 검색                     | 도서 추가                    |
 |---------------------------|---------------------------|---------------------------|
-| ![game1](./img/game1.png) | ![game2](./img/game2.png) | ![game3](./img/game3.png) |
+| ![5](https://github.com/compasstar/skku-library/assets/55419868/5d451b8b-36c8-49cb-9441-636884b25077)
+ | ![6](https://github.com/compasstar/skku-library/assets/55419868/0419f882-312b-49e0-8147-13793f0105b8)
+ | ![7](https://github.com/compasstar/skku-library/assets/55419868/6d292582-31cc-4146-a370-eea92c34323b)
+ |
 
+
+### 일반 사용자
+| 도서 추천                     | 도서 대출/연장/반남                    | 빌린 도서정보 조회                    |
+|---------------------------|---------------------------|---------------------------|
+|  ![10](https://github.com/compasstar/skku-library/assets/55419868/0159757f-ec14-46fb-807f-be75e6ef1887)
+| ![12](https://github.com/compasstar/skku-library/assets/55419868/ed6ff6e5-3b6f-4243-9589-c1c5339720cb)
+| ![13](https://github.com/compasstar/skku-library/assets/55419868/2d59eca9-8451-4e43-8cf2-659ef0a1b653)
+|
 
 
 <br>
 
 ## :dart: 주요 기능
 
-### 식당 예상 방문 날짜 및 주문 메뉴 입력 기능
-- 12월 중 식당 예상 방문 날짜를 입력받는다
-  - [검증] 1 이상 31 이하의 정수여야 한다
-- 주문 시 주의 사항을 안내한다
-  - 총주문 금액 10,000원 이상부터 이벤트 적용
-  - 음료만 주문 불가
-  - 메뉴는 한 번에 최대 20개까지만 주문 가능
-- 주문할 메뉴와 개수를 입력한다 (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)
-  - [검증] 음료만 주문할 수 없다
-  - [검증] 메뉴는 한 번에 최대 20개까지만 주문할 수 있다
-  - [검증] 메뉴판에 없는 메뉴를 주문할 수 없다
-  - [검증] 메뉴의 개수는 1 이상의 정수여야 한다
-  - [검증] 메뉴 형식이 예시와 일치해야 한다
-  - [검증] 메뉴를 중복해서 주문할 수 없다
+### 화면 기능
+- 화면 상단에는 항상 로고(홈화면이동)와 메뉴가 존재한다
+- 도서 이미지에 마우스를 올리면 약간 상승하며 그림자를 주어 선택된 느낌을 준다
+- 어느 도서 이미지에서든 클릭하면 도서 정보로 이동한다
+- 링크를 통해 이동가능한 텍스트에 마우스를 올리면 밑줄을 그어 선택된 느낌을 준다
+- 화면 하단에는 항상 로그아웃 버튼을 두어 언제든 로그아웃이 가능하도록 한다
 
-### 증정 이벤트 적용 기능
-- 할인 전 총주문 금액이 12만 원 이상이라면, 샴페인 1개를 증정한다
+### 관리자: 사용자 관리 기능
+- 사용자 목록을 관리자에게 제공한다
+- 사용자를 선택하면 해당 사용자의 id를 통해 이름, 아이디, 패스워드, 빌린 도서 정보를 제공한다
+- 관리자는 사용자 정보를 삭제할 수 있다
 
-### 할인 이벤트 적용 기능
-- 총주문 금액과 이벤트 혜택 금액을 계산한다
-- 총주문 금액 10,000원 이상부터 이벤트가 적용된다
-  - 크리스마스 디데이 할인 (2023.12.1 ~ 2023.12.25)
-  - 평일 할인 (일요일~목요일)
-  - 주말 할인 (금요일, 토요일)
-  - 특별 할인
+### 관리자: 도서 관리 기능
+- 관리자는 도서를 등록할 수 있다
+  - 등록에는 제목, 저자, 출판사, 출판년도, 장르, 이미지 정보가 필요하다
+- 도서를 조회할 수 있다
+  - 도서 제목 혹은 저자로 검색할 수 있다
+  - 도서의 장르 별로 검색할 수 있다
+- 도서의 정보를 수정 및 삭제할 수 있다
 
-### 총혜택 금액에 따른 이벤트 배지 부여 기능
-- 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴의 가격
-- 5천 원 이상 1만 원 미만: 별
-- 1만 원 이상 2만 원 미만: 트리
-- 2만 원 이상: 산타
+### 사용자: 도서 대출 기능
+- 도서의 제목 혹은 저자로 검색할 수 있다
+- 도서의 장르 별로 검색할 수 있다
+- 도서를 대출, 연장, 반납할 수 있다
+- 도서를 대출하면 해당 책은 Available 에서 Checked Out 으로 변경된다 
 
-### 전체 이벤트 혜택 출력 기능
-- 주문 메뉴 출력
-- 할인 전 총주문 금액 출력
-- 증정 메뉴 출력
-  - 증정 메뉴 없다면 "없음" 출력
-- 혜택 내역 출력
-  - 고객에게 적용된 이벤트 내역만 출력한다
-  - 적용된 이벤트가 없다면 "없음" 출력
-- 총혜택 금액 출력
-  - 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴의 가격
-- 할인 후 예상 결제 금액 출력
-- 12월 이벤트 배지 내용 출력
-  - 이벤트 배지가 없다면 "없음" 출력
-
-<br>
-
-## :mag: 아키텍쳐
-
-### 디렉토리 구조
-![architecture1](./img/architecture1.png)
+### 사용자: 빌린 도서 관리 기능
+- 사용자는 자신이 빌린 책의 목록을 확인할 수 있다
+- 도서 정보에서 반납까지 남은 일 수를 알려준다
+- 사용자는 자신의 계정을 삭제할 수 있다
 
 
-### 작업 흐름
-![architecture2](./img/architecture2.png)
