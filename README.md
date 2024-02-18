@@ -73,28 +73,21 @@ $ cd skku-library
 
 ### 회원가입/로그인
 | 로그인                     | 회원가입                     |
-|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-|![3](https://github.com/compasstar/skku-library/assets/55419868/efaef9cb-ed04-4447-ac0e-215a53a12662)
- | ![14](https://github.com/compasstar/skku-library/assets/55419868/574c9910-0ad4-4ba5-ad38-631fad5902d3)
- |
+|---------------------------|---------------------------|
+| ![로그인](https://github.com/compasstar/skku-library/assets/55419868/efaef9cb-ed04-4447-ac0e-215a53a12662) | ![회원가입](https://github.com/compasstar/skku-library/assets/55419868/574c9910-0ad4-4ba5-ad38-631fad5902d3) |
 
 
 ### 관리자
 | 사용자 관리                     | 도서 검색                     | 도서 추가                    |
 |---------------------------|---------------------------|---------------------------|
-| ![5](https://github.com/compasstar/skku-library/assets/55419868/5d451b8b-36c8-49cb-9441-636884b25077)
- | ![6](https://github.com/compasstar/skku-library/assets/55419868/0419f882-312b-49e0-8147-13793f0105b8)
- | ![7](https://github.com/compasstar/skku-library/assets/55419868/6d292582-31cc-4146-a370-eea92c34323b)
- |
+| ![사용자 관리](https://github.com/compasstar/skku-library/assets/55419868/5d451b8b-36c8-49cb-9441-636884b25077) | ![도서 검색](https://github.com/compasstar/skku-library/assets/55419868/0419f882-312b-49e0-8147-13793f0105b8) | ![도서 추가](https://github.com/compasstar/skku-library/assets/55419868/6d292582-31cc-4146-a370-eea92c34323b) |
 
 
 ### 일반 사용자
 | 도서 추천                     | 도서 대출/연장/반남                    | 빌린 도서정보 조회                    |
 |---------------------------|---------------------------|---------------------------|
-|  ![10](https://github.com/compasstar/skku-library/assets/55419868/0159757f-ec14-46fb-807f-be75e6ef1887)
-| ![12](https://github.com/compasstar/skku-library/assets/55419868/ed6ff6e5-3b6f-4243-9589-c1c5339720cb)
-| ![13](https://github.com/compasstar/skku-library/assets/55419868/2d59eca9-8451-4e43-8cf2-659ef0a1b653)
-|
+| ![도서 추천](https://github.com/compasstar/skku-library/assets/55419868/0159757f-ec14-46fb-807f-be75e6ef1887) | ![도서 대출/연장/반남](https://github.com/compasstar/skku-library/assets/55419868/ed6ff6e5-3b6f-4243-9589-c1c5339720cb) | ![빌린 도서정보 조회](https://github.com/compasstar/skku-library/assets/55419868/2d59eca9-8451-4e43-8cf2-659ef0a1b653) |
+
 
 
 <br>
